@@ -1,63 +1,96 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-6xl px-4 py-20 text-white"
+      className="w-full py-20 px-6 md:px-16 bg-black text-white"
     >
+      {/* ===== Heading ===== */}
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-bold text-center"
+        className="text-3xl md:text-4xl font-bold mb-10 flex items-center gap-2"
       >
-        📬 Get in Touch
+        ✉️ Contact
       </motion.h2>
 
-      <p className="mt-3 text-neutral-400 text-center max-w-2xl mx-auto">
-        Interested in working together or have a question? Feel free to reach out to me
-        directly or connect through any of my social platforms.
-      </p>
+      {/* ===== Grid Layout ===== */}
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* ===== Left: Info ===== */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-semibold text-white mb-4">
+            Let’s Get in Touch!
+          </h3>
 
-      <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
-        {/* Email button */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="mailto:amir9425k@gmail.com"
-          className="rounded-xl bg-emerald-600 hover:bg-emerald-500 px-8 py-4 font-medium"
+          {/* Contact Number */}
+          <div className="bg-neutral-900 border border-white/10 rounded-lg p-4 flex items-center gap-4">
+            <i className="fa-solid fa-phone text-emerald-400 text-xl"></i>
+            <div>
+              <p className="text-sm text-neutral-400">Contact No</p>
+              <p className="font-medium text-white">+91 9792293607</p>
+            </div>
+          </div>
+
+          {/* Email */}
+          <div className="bg-neutral-900 border border-white/10 rounded-lg p-4 flex items-center gap-4">
+            <i className="fa-solid fa-envelope text-emerald-400 text-xl"></i>
+            <div>
+              <p className="text-sm text-neutral-400">Email</p>
+              <p className="font-medium text-white">
+                amir9425k@gmail.com
+              </p>
+            </div>
+          </div>
+
+          {/* Address */}
+          <div className="bg-neutral-900 border border-white/10 rounded-lg p-4 flex items-center gap-4">
+            <i className="fa-solid fa-location-dot text-emerald-400 text-xl"></i>
+            <div>
+              <p className="text-sm text-neutral-400">Address</p>
+              <p className="font-medium text-white">
+                 Delhi, India
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== Right: Contact Form ===== */}
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="space-y-4 bg-neutral-900 border border-white/10 rounded-lg p-6"
         >
-          ✉️ Email Me
-        </motion.a>
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full bg-black border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-neutral-500 focus:border-emerald-500 outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full bg-black border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-neutral-500 focus:border-emerald-500 outline-none"
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            className="w-full bg-black border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-neutral-500 focus:border-emerald-500 outline-none"
+          />
+          <textarea
+            rows="4"
+            placeholder="Message"
+            className="w-full bg-black border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-neutral-500 focus:border-emerald-500 outline-none resize-none"
+          ></textarea>
 
-        {/* LinkedIn */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://linkedin.com/in/maxmirkhn"
-          target="_blank"
-          className="rounded-xl border border-emerald-500 px-8 py-4 font-medium hover:bg-emerald-500/10"
-        >
-          💼 LinkedIn
-        </motion.a>
-
-        {/* GitHub */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://github.com/amirkhxn"
-          target="_blank"
-          className="rounded-xl border border-emerald-500 px-8 py-4 font-medium hover:bg-emerald-500/10"
-        >
-          🌐 GitHub
-        </motion.a>
-      </div>
-
-      <div className="mt-16 text-center text-neutral-500 text-sm">
-        <p>Made with ❤️ using React, Tailwind & Framer Motion</p>
-        <p className="mt-1">© {new Date().getFullYear()} Mohd Amir Khan. All rights reserved.</p>
+          <button
+            type="submit"
+            className="w-full py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
     </section>
   );

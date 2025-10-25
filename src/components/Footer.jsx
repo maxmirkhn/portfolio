@@ -15,14 +15,14 @@ const Footer = () => {
           <a href="#projects" className="text-neutral-300 hover:text-white">Projects</a>
           <a href="#contact" className="text-neutral-300 hover:text-white">Contact</a>
           <a
-            href="https://github.com/yourname"
+            href="https://github.com/maxmirkhn"
             target="_blank"
             className="text-neutral-300 hover:text-white"
           >
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourname"
+            href="https://www.linkedin.com/in/mohd-amir-khan-418412359/"
             target="_blank"
             className="text-neutral-300 hover:text-white"
           >

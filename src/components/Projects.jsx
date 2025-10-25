@@ -27,10 +27,10 @@ export default function Projects() {
       "Redux Toolkit",
       "NodeCron",
     ],
-    img: "/bookworm.png",
-    github: "https://lnkd.in/egb7CXFP",
+    img: "bookworm.png",
+    github: "https://github.com/maxmirkhn",
     video:
-      "https://www.linkedin.com/feed/update/urn:li:activity-7240541776647456768/",
+      "https://www.linkedin.com/feed/update/urn:li:activity:7379749591245660160/",
   };
 
   return (
