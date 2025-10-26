@@ -11,7 +11,7 @@ export default function Hero() {
     >
       <h1 className="text-4xl md:text-5xl font-bold leading-tight">
         I’m <span className="text-emerald-400">Mohd Amir Khan</span>, <br />
-        <span className="text-emerald-400">Full-Stack Engineer</span> Based in India
+        <span className="text-emerald-400">Full-Stack Engineer</span>
       </h1>
 
       <p className="mt-4 text-neutral-300 text-base md:text-lg max-w-3xl leading-relaxed">
