@@ -95,28 +95,22 @@ export default function Skills() {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-bold flex items-center gap-2"
+        className="text-4xl font-bold"
       >
-        🧰 Skills & Tools
+        Expertise
       </motion.h2>
-
-      {/* Sub Caption */}
-      <p className="mt-2 text-neutral-400 max-w-2xl">
-        Focused on creating responsive frontends, scalable backends, and reliable databases — backed by modern tools.
-      </p>
+      <p className="mt-2 text-neutral-400">The tools and technologies I use to bring ideas to life.</p>
 
       {/* Cards */}
-      <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((s) => (
           <motion.div
             key={s.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="group rounded-2xl bg-neutral-900/80 border border-white/10 hover:border-emerald-500/40 transition-all p-5 flex items-start gap-4"
+            className="group rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-emerald-500/40 transition-all p-6 flex items-start gap-4"
           >
             <div className="text-2xl shrink-0">{s.icon}</div>
 
@@ -130,8 +124,8 @@ export default function Skills() {
               <p className="mt-1 text-sm text-neutral-400">{s.note}</p>
 
               {/* progress bar animation */}
-              <div className="mt-3 h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                <div className="h-full w-[72%] bg-emerald-500/70 group-hover:w-[88%] transition-[width] duration-500"></div>
+              <div className="mt-4 h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                <div className="h-full w-[72%] bg-gradient-to-r from-emerald-500 to-teal-400 group-hover:w-[90%] transition-all duration-700 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
               </div>
             </div>
           </motion.div>

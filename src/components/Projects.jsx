@@ -1,112 +1,138 @@
 import { motion } from "framer-motion";
 
-export default function Projects() {
-  const project = {
-    title: "BookWorm – MERN Library Management System",
-    desc: "A full-stack Library Management System built with the MERN stack, providing both user and admin functionality. It handles secure authentication, OTP verification, book management, and automated notifications for overdue books.",
+const projects = [
+  {
+    title: "ImageResizo",
+    live: "https://imageresizo.com",
+    github: "https://github.com/DroidNova/Image-Tools",
+    desc: "Privacy-first image processing tool that runs entirely in the browser. No uploads, fast performance, and precise compression.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind"],
     features: [
-      "Secure Login & Signup using JWT Authentication",
-      "OTP Verification via Email (NodeMailer)",
-      "Role-based Access: User & Admin",
-      "Borrow & Return Books functionality",
-      "Admin Panel for Managing Books & Users",
-      "Password Reset + Email Notifications",
-      "Responsive Frontend using React + Tailwind CSS",
-      "Real-Time Email Notifications",
-      "Automation for Overdue Book Reminders",
+      "Client-side image processing (Canvas API)",
+      "Resize, compress & convert images",
+      "Exact file size targeting (50KB, 100KB)",
+      "Fast and SEO-optimized UI"
     ],
-    tech: [
-      "React.js",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB (Mongoose)",
-      "JWT + Bcrypt.js",
-      "NodeMailer",
-      "Cloudinary",
-      "Redux Toolkit",
-      "NodeCron",
+    img: "imageresizo.png",
+  },
+  {
+    title: "BookWorm – Library Management System",
+    desc: "Full-stack MERN application with authentication, admin panel, and real-time email notifications.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    features: [
+      "JWT Authentication + OTP verification",
+      "Role-based access (Admin/User)",
+      "Borrow & return system",
+      "Automated overdue reminders"
     ],
     img: "bookworm.png",
-    github: "https://github.com/maxmirkhn",
-    video:
-      "https://www.linkedin.com/feed/update/urn:li:activity:7379749591245660160/",
-  };
+    live: "#",
+    github: "#",
+  },
+];
 
+export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 py-20 text-white">
-      <h2 className="text-3xl md:text-4xl font-bold flex items-center gap-2">
-        💻 Project
-      </h2>
-      <p className="mt-2 text-neutral-400">
-        Here’s my latest MERN stack project, <span className="text-emerald-400 font-semibold">BookWorm</span> — a complete Library Management System.
-      </p>
+    <section id="projects" className="py-28 max-w-6xl mx-auto px-4">
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="mt-10 rounded-2xl bg-neutral-900 border border-white/10 hover:border-emerald-500/30 transition p-6 md:p-8"
-      >
-        {/* Image */}
-        <div className="overflow-hidden rounded-xl">
-          <img
-            src={project.img}
-            alt={project.title}
-            className="w-full h-72 object-cover hover:scale-105 transition duration-300"
-          />
-        </div>
-
-        {/* Title & Description */}
-        <h3 className="mt-6 text-2xl font-semibold">{project.title}</h3>
-        <p className="mt-3 text-neutral-400 text-sm leading-relaxed">
-          {project.desc}
+      {/* Header */}
+      <div className="text-center mb-20">
+        <h2 className="text-4xl md:text-5xl font-bold">
+          Selected Work
+        </h2>
+        <div className="w-24 h-1.5 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+        <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">
+          Real-world projects focused on performance, scalability, and clean architecture.
         </p>
+      </div>
 
-        {/* Features */}
-        <div className="mt-5">
-          <h4 className="font-semibold text-emerald-400">✨ Key Features:</h4>
-          <ul className="mt-2 list-disc list-inside text-sm text-neutral-300 space-y-1">
-            {project.features.map((f, i) => (
-              <li key={i}>{f}</li>
-            ))}
-          </ul>
-        </div>
+      {/* Projects */}
+      <div className="space-y-24">
+        {projects.map((project, idx) => {
 
-        {/* Tech Stack */}
-        <div className="mt-6">
-          <h4 className="font-semibold text-emerald-400">🛠 Tech Stack:</h4>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {project.tech.map((t, i) => (
-              <span
-                key={i}
-                className="text-xs border border-white/10 bg-black/30 rounded-full px-2 py-1 text-neutral-300"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
+          const isReverse = idx % 2 !== 0;
 
-        {/* Buttons */}
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href={project.github}
-            target="_blank"
-            className="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-sm font-medium"
-          >
-            🔗 View Source Code
-          </a>
-          <a
-            href={project.video}
-            target="_blank"
-            className="px-5 py-2.5 rounded-lg border border-emerald-500 text-sm font-medium hover:bg-emerald-500/10"
-          >
-            🎥 Watch Demo Video
-          </a>
-        </div>
-      </motion.div>
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className={`grid md:grid-cols-2 gap-12 items-center p-8 md:p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-emerald-500/30 transition ${isReverse ? "md:flex-row-reverse" : ""
+                }`}
+            >
+
+              {/* IMAGE */}
+              <div className={`overflow-hidden rounded-2xl h-72 ${isReverse ? "order-2" : ""}`}>
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div className="space-y-6">
+
+                <h3 className="text-3xl md:text-4xl font-bold">
+                  {project.title}
+                </h3>
+
+                <p className="text-neutral-400 leading-relaxed">
+                  {project.desc}
+                </p>
+
+                {/* FEATURES */}
+                <ul className="space-y-2 text-sm text-neutral-300">
+                  {project.features.map((f, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-emerald-400">•</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* TECH */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 text-sm bg-emerald-500/10 text-emerald-400 rounded-lg border border-emerald-500/20"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* BUTTONS */}
+                <div className="flex gap-4 pt-4">
+
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-medium transition"
+                  >
+                    🚀 Live
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition"
+                  >
+                    🔗 GitHub
+                  </a>
+
+                </div>
+
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
     </section>
   );
 }
